@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="yes" name="apple-touch-fullscreen"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<title>游戏首页</title>
+		<!--<link rel="stylesheet" type="text/css" href="../css/page/doublecheckbox.css">-->
+		<style>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    font-family:'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+}
+*{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+a{
+	text-decoration: none;
+}
+body{
+	overflow: hidden;
+}
+.drag-content{
+	padding:9px;
+	overflow: hidden;
+	text-align: center;
+}
+.drag-content .drag-box{
+	width:301px;
+	margin:0 auto;
+	display: inline-block;
+	border:solid #ccc;
+	border-width: 1px 0 0 1px;
+}
+.drag-box .item{
+	width:100px;
+	height:100px;
+	line-height: 100px;
+	text-align: center;
+	vertical-align: middle;
+	float:left;
+	border:solid #ccc;
+	border-width: 0 1px 1px 0;
+}
+.drag-float .item{
+	width:100%;
+	height:100px;
+	line-height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	border:1px solid #ccc;
+}
+.counter{
+	text-align: right;
+	font-size:20px;
+	padding-right:20px;
+}
+
+.play-container{
+	position: relative;
+	display: inline-block;
+}
+.play-container .play-style{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 100%;
+	background-color:rgba(0,0,0,.6);
+}
+.play-container .play-style .play-btn{
+	display: inline-block;
+	margin-top:40%;
+	width:100px;
+	height: 100px;
+	border-radius: 100px;
+	border:2px solid #FFF;
+	line-height: 90px;
+	vertical-align: middle;
+	text-align: center;
+}
+.play-container .play-style .play-btn::before{
+	content:"";
+	display: inline-block;
+	width:0px;
+	height: 0px;
+	vertical-align: middle;
+	border-top:35px solid transparent;
+	border-bottom:35px solid transparent;
+	border-left:35px solid rgba(0,0,0,.1);
+	border-right: 0px;
+	border-right-radius: 20px;
+}
+.count-down{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 100%;
+	background-color:rgba(0,0,0,.6);
+	color:#FFF;
+	font-size:300px;
+	line-height: 100%;
+	vertical-align: middle;
+	text-align: center;
+	display: none;
+}
+		</style>
+	</head>
+	<body>
+		<div class="counter" id="counter">0.000''</div>
+		<div class="drag-content">
+			<div class="play-container">
+				<div  class="drag-box"></div>
+				<div class="play-style">
+					<a href="javascript:;" class="play-btn"></a>
+				</div>
+				<div class="count-down">
+					<div class="count" id="countdowncount">3</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript">
+		var config = {
+			row:4,
+			column:3
+		}
+		</script>
+		<script type="text/javascript" src="../js/page/game.js"></script>
+	</body>
+</html>

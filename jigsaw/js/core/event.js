@@ -1,0 +1,2 @@
+/**combine by hugjs**/
+define("core/event",function(){return{addEvent:function(e,t,n,r){e&&e.addEventListener(t,n,r)},removeEvent:function(e,t,n,r){e&&e.removeEventListener(t,n,r)},stopEvent:function(e){e.preventDefault(),e.stopPropagation()},preventDefault:function(e){e.preventDefault()},getEvent:function(){}}});

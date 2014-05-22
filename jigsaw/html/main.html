@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="yes" name="apple-touch-fullscreen"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../css/common/reset.css">
+		
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+var _loadScript = function(url, options,cb){
+	var script = document.createElement("script");
+	var def = {
+	type: "text/javascript",
+	      charset:"utf-8"
+	}
+	options= options|| {
+	}	
+	for(var i in options){
+		def[i] = options[i];
+	}
+	script.src = url;
+	for(var i in def){
+		script.setAttribute(i,def[i]);
+    }
+	script.addEventListener("load",function(){
+		cb && cb();
+	},false)
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+_loadScript("../js/page/userindex.js",{},function(){
+	
+})
+
+		</script>
+	</body>
+</html>

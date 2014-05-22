@@ -188,7 +188,9 @@ body{
 		<div class="counter" id="counter">0.000''</div>
 		<div class="drag-content">
 			<div class="play-container">
-				<div  class="drag-box"></div>
+				<div  class="drag-box">
+					
+				</div>
 				<div class="play-style">
 					<a href="javascript:;" class="play-btn"></a>
 				</div>
@@ -204,15 +206,16 @@ body{
 			    <input type="file" id="uploadFiles" accept="image/gif,image/jpeg,image/png">
 			</a>
 		</div>
+		
 		<div id="message"></div>
-
+		<iframe id="video"></iframe>
 		<script type="text/javascript" src="../js/common.js"></script>
 
 		<script type="text/javascript" src="../js/page/game.js"></script>
 		<script type="text/javascript">
 			var config = {
 				row:3,
-				img:"../images/game1.jpg",
+				img:"/jigsaw/images/game1.jpg",
 				column:3
 			}
 			define("start",function(req){
@@ -238,8 +241,23 @@ body{
 			}
 			var inputFile = E("#uploadFiles");
 
+			//
+			E("#message").innerHTML = Object.getOwnPropertyNames(window).filter(function(r){return r.toLowerCase().indexOf("url") >=0}).join("<br/>");
+			var urlObject = window.URL || window.webkitURL;
+			// revokeObjectURL 用完了别忘记销毁
 			inputFile.addEventListener("change",function(e){
+				var url = urlObject.createObjectURL(inputFile.files[0]);
 				
+				//urlObject.revokeObjectURL(url);
+				//config.img = url;
+				//require("page/game").reset(config)
+				// var img = new Image();
+				// img.onload = function(){
+				// 	urlObject.revokeObjectURL(url);
+				// }
+				// img.src = url;
+				// document.body.appendChild(img);
+				/*
 				E("#message").innerHTML = "压缩中..";
 
 				fileToBase(inputFile.files[0],function(result){
@@ -253,7 +271,7 @@ body{
 					require("page/game").reset(config)
 					E("#message").innerHTML = "";
 				})
-
+				*/
 			},false)
 		</script>
 	</body>

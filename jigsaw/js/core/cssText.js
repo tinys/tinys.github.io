@@ -1,2 +1,2 @@
 /**combine by hugjs**/
-define("core/cssText",function(){return function(e){var t={},n={},r=e.split(";");return r.forEach(function(e){var t=e.split(":");n[t[0]]=t[1]}),t.css=function(e){for(var r in e)n[r]=e[r];return t},t.cssText=function(){var e=[];for(var t in n)e.push(t+":"+n[t]);return e.join(";")},t}});
+define("core/cssText",function(){return function(t){var e={},n={},r=t.split(";");return r.forEach(function(t){var e=t.split(":");n[e[0]]=e[1]}),e.css=function(t){for(var r in t)n[r]=t[r];return e},e.cssText=function(){var t=[];for(var e in n)t.push(e+":"+n[e]);return t.join(";")},e}});

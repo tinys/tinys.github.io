@@ -1,0 +1,2 @@
+/**combine by hugjs**/
+define("core/dom",function(){var t={addClass:function(e,n){1===e.nodeType&&(t.hasClass(e,n)||(e.className=e.className.trim()+" "+n))},removeClass:function(e,n){1===e.nodeType&&t.hasClass(e,n)&&(e.className=e.className.replace(new RegExp("(^|\\s)"+n+"($|\\s)")," "))},hasClass:function(t,e){return new RegExp("(^|\\s)"+e+"($|\\s)").test(t.className)}};return t});

@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="yes" name="apple-touch-fullscreen"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<title>双选checkbox</title>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/page/doublecheckbox.css">
+		<style>
+			.p-loading, .p-loading-mask {
+    background: url(http://paybeta.m.360buy.com/images/newhtml5/p-loading-bg.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    max-height: 265px;
+    max-width: 265px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.p-loading {
+    position: relative;
+    background-position: 0% 100%;
+}
+.p-loading-mask {
+    -webkit-animation: p-loading-anim 5s ease-out 0s infinite;
+    -ms-animation: p-loading-anim 5s ease-out 0s infinite;
+    -o-animation: p-loading-anim 5s ease-out 0s infinite;
+    -moz-animation: p-loading-anim 5s ease-out 0s infinite;
+    animation: p-loading-anim 5s ease-out 0s infinite;
+}
+@-webkit-keyframes p-loading-anim {
+    0% {
+        height: 100%;
+    }
+    20% {
+        height: 55%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+@-moz-keyframes p-loading-anim {
+    0% {
+        height: 100%;
+    }
+    20% {
+        height: 55%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+@-ms-keyframes p-loading-anim {
+    0% {
+        height: 100%;
+    }
+    20% {
+        height: 55%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+@-o-keyframes p-loading-anim {
+    0% {
+        height: 100%;
+    }
+    20% {
+        height: 55%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+@keyframes p-loading-anim {
+    0% {
+        height: 100%;
+    }
+    20% {
+        height: 55%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+.biz-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .7;
+    z-index: 999;
+}
+.biz-p-loading-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    z-index: 9999;
+    margin-left: -25px;
+    margin-top: -25px;
+    background: #000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+.biz-p-loading-text {
+    display: block;
+    color: #fff;
+}
+
+			
+		</style>
+		<script type="text/javascript">
+		
+		</script>
+	</head>
+	<body style=""> 
+		<div class="biz-p-loading-wrapper" id="bizLoadingDivId" style="/* display: none !important; */">
+		    <div class="p-loading">
+		        <div class="p-loading-mask"></div>
+		    </div>
+		    <span class="biz-p-loading-text" id="bizLoadingTextId">努力加载中...</span>
+		</div>
+		<div style="margin-top:50px">
+			<div  style="width:200px;border:1px solid #ccc;margin:0 auto;">
+			<input type="text" readonly="readonly" id="chooseBank" style="width:100%;border:0;" placeholder="点击选择卡类型">
+			</div>
+		</div>
+		<div style="margin-top:50px">
+			<div  style="width:200px;border:1px solid #ccc;margin:0 auto;">
+			<input type="text" readonly="readonly" id="chooseBanks" style="width:100%;border:0;" placeholder="单选">
+			</div>
+		</div>
+			<div style="margin-top:50px">
+			<div  style="width:200px;border:1px solid #ccc;margin:0 auto;">
+				<input type="text" readonly="readonly" id="chooseDate" style="width:100%;border:0;" placeholder="日期">
+			</div>
+		</div>
+		<div>
+			<a href="javascript:;" id="testId">click me</a>
+		</div>
+		<script type="text/javascript">
+//		
+//		window.addEventListener("MSPointerMove",function(e){
+//			e = e || window.event;
+//			e.preventDefault();
+//		},false)
+//		document.body.addEventListener("MSPointerMove",function(e){
+//			e = e || window.event;
+//			e.preventDefault();
+//			e.stopPropagation();
+//		},false)
+		/*
+		document.body.addEventListener("touchend",function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			//alert("touchend");
+		
+		testId.addEventListener("touchstart",function(e){
+			//e.preventDefault();
+			//e.stopPropagation();
+		},false);
+		testId.addEventListener("touchmove",function(e){
+			//e.preventDefault();
+			//e.stopPropagation();
+		},false);
+		
+		
+
+		document.body.addEventListener("click",function(e){
+			alert("click");
+		},false);
+*/
+		</script>
+		<a class="clicktag"  id="clickHref" href="http://baidu.com">
+		<div class="clicktag" style="width:100%;height:700px;background-color:yellow;">
+			
+		</div></a>
+	<script type="text/javascript" src="../js/page/exportselect.js"></script>
+	<script type="text/javascript">
+		var bankData = [
+			{
+				name:"农业银行",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行2",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行3",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行4",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行5",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行6",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行7",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行8",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行9",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行10",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					},
+					{
+						name:"信用卡",
+						value:"信用卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			},
+			{
+				name:"农业银行11",
+				value:"农业银行",
+				child:[
+					{
+						name:"储蓄卡",
+						value:"储蓄卡",
+					}
+				]
+			}
+		];
+		var twoSelect = JDK.comp.twoSelect;
+		var chooseBank = document.getElementById("chooseBank");
+		var page1 = 1,page2=0;
+		JDK.core.touchClick(chooseBank,function(){
+			var select = twoSelect(bankData,page1,page2);
+			select.on("select",function(data1,data2,p1,p2){
+				chooseBank.value = data1.name + ":"+data2.name
+				page1 = p1;
+				page2 = p2;
+			});
+		})
+		var chooseBanks = document.getElementById("chooseBanks");
+		JDK.core.touchClick(chooseBanks,function(){
+			var select = JDK.comp.select(bankData);
+			select.init();
+			select.select(2);
+			select.on("selected",function(selecteds){
+				var d = selecteds[0];
+				chooseBanks.value = d.name
+			});
+		})
+
+		var year = [
+			{
+				name:"1998",
+				value:"1998"
+			},
+			{
+				name:"1999",
+				value:"1999"
+			}
+		],
+		month = [
+			{
+				name:"1",
+				value:"1"
+			},
+			{
+				name:"2",
+				value:"2"
+			},
+			{
+				name:"3",
+				value:"3"
+			}
+		],
+		day = [
+			{
+				name:"1",
+				value:"1"
+			},
+			{
+				name:"2",
+				value:"2"
+			},
+			{
+				name:"3",
+				value:"3"
+			}
+		];
+		var chooseDate = document.getElementById("chooseDate");
+		JDK.core.touchClick(chooseDate,function(){
+			var select = JDK.comp.select(year,month,day);
+			select.init();
+			select.select(1,1,1);
+			select.on("selected",function(selecteds){
+				chooseDate.value=selecteds[0].value+"/" + selecteds[1].value +"/"+selecteds[2].value
+			});
+		})[3]
+	</script>
+	</body>
+</html>

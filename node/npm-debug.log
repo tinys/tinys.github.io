@@ -1,0 +1,209 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\node\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\node\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.1.36
+3 info using node@v0.8.2
+4 verbose node symlink D:\node\nodejs\\node.exe
+5 verbose config file C:\Users\dong\.npmrc
+6 verbose config file D:\node\nodejs\etc\npmrc
+7 verbose config file D:\node\nodejs\node_modules\npm\npmrc
+8 verbose read json D:\front-waibao\server\package.json
+9 verbose readDependencies using package.json deps
+10 verbose install where, deps [ 'D:\\front-waibao\\server', [ 'ejs', 'express' ] ]
+11 verbose from cache D:\front-waibao\server\package.json
+12 info preinstall staticserver@0.0.1
+13 verbose from cache D:\front-waibao\server\package.json
+14 verbose readDependencies using package.json deps
+15 verbose cache add [ 'ejs@1.0.0', null ]
+16 silly cache add name=undefined spec="ejs@1.0.0" args=["ejs@1.0.0",null]
+17 verbose parsed url { pathname: 'ejs@1.0.0', path: 'ejs@1.0.0', href: 'ejs@1.0.0' }
+18 silly cache add name="ejs" spec="1.0.0" args=["ejs","1.0.0"]
+19 verbose parsed url { pathname: '1.0.0', path: '1.0.0', href: '1.0.0' }
+20 verbose addNamed [ 'ejs', '1.0.0' ]
+21 verbose addNamed [ '1.0.0', '1.0.0' ]
+22 verbose cache add [ 'express@~3.3.4', null ]
+23 silly cache add name=undefined spec="express@~3.3.4" args=["express@~3.3.4",null]
+24 verbose parsed url { pathname: 'express@~3.3.4',
+24 verbose parsed url   path: 'express@~3.3.4',
+24 verbose parsed url   href: 'express@~3.3.4' }
+25 silly cache add name="express" spec="~3.3.4" args=["express","~3.3.4"]
+26 verbose parsed url { pathname: '~3.3.4', path: '~3.3.4', href: '~3.3.4' }
+27 verbose addNamed [ 'express', '~3.3.4' ]
+28 verbose addNamed [ null, '>=3.3.4- <3.4.0-' ]
+29 silly lockFile 09d41e23-express-3-3-4 express@~3.3.4
+30 verbose lock express@~3.3.4 C:\Users\dong\AppData\Roaming\npm-cache\09d41e23-express-3-3-4.lock
+31 silly lockFile 3b9d58f7-ejs-1-0-0 ejs@1.0.0
+32 verbose lock ejs@1.0.0 C:\Users\dong\AppData\Roaming\npm-cache\3b9d58f7-ejs-1-0-0.lock
+33 silly addNameRange { name: 'express', range: '>=3.3.4- <3.4.0-', hasData: false }
+34 verbose url raw ejs/1.0.0
+35 verbose url resolving [ 'https://registry.npmjs.org/', './ejs/1.0.0' ]
+36 verbose url resolved https://registry.npmjs.org/ejs/1.0.0
+37 info retry registry request attempt 1 at 16:46:51
+38 http GET https://registry.npmjs.org/ejs/1.0.0
+39 verbose url raw express
+40 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+41 verbose url resolved https://registry.npmjs.org/express
+42 info retry registry request attempt 1 at 16:46:51
+43 verbose etag "A4J2VN9LYW35EXRCE4E6IINE1"
+44 http GET https://registry.npmjs.org/express
+45 info retry will retry, error on last attempt: Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+46 info retry will retry, error on last attempt: Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+47 info retry registry request attempt 2 at 16:47:02
+48 verbose etag "A4J2VN9LYW35EXRCE4E6IINE1"
+49 http GET https://registry.npmjs.org/express
+50 info retry registry request attempt 2 at 16:47:02
+51 http GET https://registry.npmjs.org/ejs/1.0.0
+52 info retry will retry, error on last attempt: Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+53 info retry will retry, error on last attempt: Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+54 info retry registry request attempt 3 at 16:48:03
+55 verbose etag "A4J2VN9LYW35EXRCE4E6IINE1"
+56 http GET https://registry.npmjs.org/express
+57 silly registry.get cb [ 304, undefined ]
+58 verbose etag express from cache
+59 silly addNameRange number 2 { name: 'express', range: '>=3.3.4- <3.4.0-', hasData: true }
+60 silly addNameRange versions [ 'express',
+60 silly addNameRange   [ '0.14.0',
+60 silly addNameRange     '0.14.1',
+60 silly addNameRange     '1.0.0',
+60 silly addNameRange     '1.0.1',
+60 silly addNameRange     '1.0.2',
+60 silly addNameRange     '1.0.3',
+60 silly addNameRange     '1.0.4',
+60 silly addNameRange     '1.0.5',
+60 silly addNameRange     '1.0.6',
+60 silly addNameRange     '1.0.7',
+60 silly addNameRange     '1.0.8',
+60 silly addNameRange     '2.0.0',
+60 silly addNameRange     '2.1.0',
+60 silly addNameRange     '2.1.1',
+60 silly addNameRange     '2.2.0',
+60 silly addNameRange     '2.2.1',
+60 silly addNameRange     '2.2.2',
+60 silly addNameRange     '2.3.0',
+60 silly addNameRange     '2.3.1',
+60 silly addNameRange     '2.3.2',
+60 silly addNameRange     '2.3.3',
+60 silly addNameRange     '2.3.4',
+60 silly addNameRange     '2.3.5',
+60 silly addNameRange     '2.3.6',
+60 silly addNameRange     '2.3.7',
+60 silly addNameRange     '2.3.8',
+60 silly addNameRange     '2.3.9',
+60 silly addNameRange     '2.3.10',
+60 silly addNameRange     '2.3.11',
+60 silly addNameRange     '2.3.12',
+60 silly addNameRange     '2.4.0',
+60 silly addNameRange     '2.4.1',
+60 silly addNameRange     '2.4.2',
+60 silly addNameRange     '2.4.3',
+60 silly addNameRange     '2.4.4',
+60 silly addNameRange     '2.4.5',
+60 silly addNameRange     '2.4.6',
+60 silly addNameRange     '2.4.7',
+60 silly addNameRange     '2.5.0',
+60 silly addNameRange     '2.5.1',
+60 silly addNameRange     '2.5.2',
+60 silly addNameRange     '2.5.3',
+60 silly addNameRange     '2.5.4',
+60 silly addNameRange     '2.5.5',
+60 silly addNameRange     '2.5.6',
+60 silly addNameRange     '2.5.7',
+60 silly addNameRange     '2.5.8',
+60 silly addNameRange     '2.5.9',
+60 silly addNameRange     '2.5.10',
+60 silly addNameRange     '2.5.11',
+60 silly addNameRange     '3.0.0',
+60 silly addNameRange     '3.0.1',
+60 silly addNameRange     '3.0.2',
+60 silly addNameRange     '3.0.3',
+60 silly addNameRange     '3.0.4',
+60 silly addNameRange     '3.0.5',
+60 silly addNameRange     '3.0.6',
+60 silly addNameRange     '3.1.0',
+60 silly addNameRange     '3.1.1',
+60 silly addNameRange     '3.1.2',
+60 silly addNameRange     '3.2.0',
+60 silly addNameRange     '3.2.1',
+60 silly addNameRange     '3.2.2',
+60 silly addNameRange     '3.2.3',
+60 silly addNameRange     '3.2.4',
+60 silly addNameRange     '3.2.5',
+60 silly addNameRange     '3.2.6',
+60 silly addNameRange     '3.3.0',
+60 silly addNameRange     '3.3.1',
+60 silly addNameRange     '3.3.2',
+60 silly addNameRange     '3.3.3',
+60 silly addNameRange     '3.3.4',
+60 silly addNameRange     '3.3.5',
+60 silly addNameRange     '3.3.6',
+60 silly addNameRange     '1.0.0-beta',
+60 silly addNameRange     '1.0.0-beta2',
+60 silly addNameRange     '1.0.0-rc',
+60 silly addNameRange     '1.0.0-rc2',
+60 silly addNameRange     '1.0.0-rc3',
+60 silly addNameRange     '1.0.0-rc4',
+60 silly addNameRange     '2.0.0-beta',
+60 silly addNameRange     '2.0.0-beta2',
+60 silly addNameRange     '2.0.0-beta3',
+60 silly addNameRange     '2.0.0-rc',
+60 silly addNameRange     '2.0.0-rc2',
+60 silly addNameRange     '2.0.0-rc3',
+60 silly addNameRange     '3.0.0-alpha1',
+60 silly addNameRange     '3.0.0-alpha2',
+60 silly addNameRange     '3.0.0-alpha3',
+60 silly addNameRange     '3.0.0-alpha4',
+60 silly addNameRange     '3.0.0-alpha5',
+60 silly addNameRange     '3.0.0-beta1',
+60 silly addNameRange     '3.0.0-beta2',
+60 silly addNameRange     '3.0.0-beta3',
+60 silly addNameRange     '3.0.0-beta4',
+60 silly addNameRange     '3.0.0-beta6',
+60 silly addNameRange     '3.0.0-beta7',
+60 silly addNameRange     '3.0.0-rc1',
+60 silly addNameRange     '3.0.0-rc2',
+60 silly addNameRange     '3.0.0-rc3',
+60 silly addNameRange     '3.0.0-rc4',
+60 silly addNameRange     '3.0.0-rc5',
+60 silly addNameRange     '3.3.7',
+60 silly addNameRange     '3.3.8',
+60 silly addNameRange     '3.4.0' ] ]
+61 verbose addNamed [ 'express', '3.3.8' ]
+62 verbose addNamed [ '3.3.8', '3.3.8' ]
+63 silly lockFile a43a70ac-express-3-3-8 express@3.3.8
+64 verbose lock express@3.3.8 C:\Users\dong\AppData\Roaming\npm-cache\a43a70ac-express-3-3-8.lock
+65 silly lockFile 15ee31b9-js-org-express-express-3-3-8-tgz https://registry.npmjs.org/express/-/express-3.3.8.tgz
+66 verbose lock https://registry.npmjs.org/express/-/express-3.3.8.tgz C:\Users\dong\AppData\Roaming\npm-cache\15ee31b9-js-org-express-express-3-3-8-tgz.lock
+67 verbose addRemoteTarball [ 'https://registry.npmjs.org/express/-/express-3.3.8.tgz',
+67 verbose addRemoteTarball   '8e98ac30d81f4c95b85d71d2af6cf84f62ef19bd' ]
+68 info retry fetch attempt 1 at 16:48:04
+69 verbose fetch to= C:\Users\dong\AppData\Local\Temp\npm-4344\1407574084416-0.5608340438921005\tmp.tgz
+70 http GET https://registry.npmjs.org/express/-/express-3.3.8.tgz
+71 info retry registry request attempt 3 at 16:48:06
+72 http GET https://registry.npmjs.org/ejs/1.0.0
+73 error fetch failed https://registry.npmjs.org/express/-/express-3.3.8.tgz
+74 info retry will retry, error on last attempt: Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+75 silly lockFile 3b9d58f7-ejs-1-0-0 ejs@1.0.0
+76 error Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+76 error     at ClientRequest.<anonymous> (D:\node\nodejs\node_modules\npm\node_modules\request\main.js:440:26)
+76 error     at ClientRequest.g (events.js:185:14)
+76 error     at ClientRequest.EventEmitter.emit (events.js:88:17)
+76 error     at HTTPParser.parserOnIncomingClient (http.js:1445:7)
+76 error     at HTTPParser.parserOnHeadersComplete [as onHeadersComplete] (http.js:111:23)
+76 error     at CleartextStream.socketOnData (http.js:1356:20)
+76 error     at CleartextStream.CryptoStream._push (tls.js:396:27)
+76 error     at SecurePair.cycle (tls.js:750:20)
+76 error     at EncryptedStream.CryptoStream.write (tls.js:131:13)
+76 error     at Socket.ondata (stream.js:38:26)
+76 error  [Error: SSL Error: SELF_SIGNED_CERT_IN_CHAIN]
+77 error You may report this log at:
+77 error     <http://github.com/isaacs/npm/issues>
+77 error or email it to:
+77 error     <npm-@googlegroups.com>
+78 error System Windows_NT 6.1.7600
+79 error command "D:\\node\\nodejs\\\\node.exe" "D:\\node\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+80 error cwd D:\front-waibao\server
+81 error node -v v0.8.2
+82 error npm -v 1.1.36
+83 error message SSL Error: SELF_SIGNED_CERT_IN_CHAIN
+84 verbose exit [ 1, true ]

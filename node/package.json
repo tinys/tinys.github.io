@@ -1,0 +1,11 @@
+{
+  "name": "staticserver",
+  "version": "0.0.1",
+  "description": "write js in browser as node on server",
+  "dependencies": {
+    "ejs":"1.0.0",
+    "express": "~3.3.4"
+  },
+  "author": "yajie",
+  "license": "MIT"
+}

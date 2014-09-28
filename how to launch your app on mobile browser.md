@@ -116,7 +116,9 @@ return appInstall;
 ##其他
 ###safari
 ios 6.0 以上app推荐
+```html
 <meta name="apple-itunes-app" content="app-id=432274380">
+```
 ###微信中判断是否安装app
 在微信中如果想通过Schema方式打开应用，貌似除腾讯以外的是不行了。
 ```javascript

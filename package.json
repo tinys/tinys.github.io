@@ -1,0 +1,23 @@
+{
+  "name": "tinys",
+  "version": "0.0.1",
+  "description": "a react application powerd by zola",
+  "scripts": {
+    "start": "ENVIRONMENT=development redskull start --dashboard false",
+    "test": "ENVIRONMENT=testing redskull build",
+    "build": "ENVIRONMENT=production redskull build --publicPath ./dist/ && cp -f ./dist/index.html ./index.html"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@lianjia/zola-core": "0.0.4"
+  },
+  "redskull": {
+    "port": 6003,
+    "src": "./src",
+    "entry": "index.js",
+    "dist": "./dist",
+    "devConfig": "./webpack/config.dev.js",
+    "prodConfig": "./webpack/config.prod.js",
+    "favico": ""
+  }
+}

@@ -1,2 +1,0 @@
-/**combine by hugjs**/
-define("common/AFrame",function(){function t(){var t;do t=Math.floor(1e9*Math.random());while(t in o);return t}function e(e){var n=t();return o[n]=i(function(){delete o[n],e.apply(a,arguments)}),n}function n(t){var n;return n=e(function(){o[n]=i(function(){delete o[n],t.apply(a,arguments)})})}var r=window,i=r.requestAnimationFrame||r.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||r.msRequestAnimationFrame||function(t){r.setTimeout(t,1e3/60)},o={},a=r;return{queue:e,queueAfter:n}});

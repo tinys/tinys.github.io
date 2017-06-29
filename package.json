@@ -9,15 +9,16 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@lianjia/zola-core": "0.0.4"
+    "@lianjia/zola-core": "0.0.4",
+    "showdown": "^1.7.1"
   },
   "redskull": {
     "port": 6003,
     "src": "./src",
     "entry": "index.js",
     "dist": "./dist",
-    "devConfig": "./webpack/config.dev.js",
-    "prodConfig": "./webpack/config.prod.js",
+    "openBrowser": false,
+    "deps": "./",
     "favico": "./src/favicon.ico"
   }
 }

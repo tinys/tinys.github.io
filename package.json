@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ENVIRONMENT=development redskull start --dashboard false",
     "test": "ENVIRONMENT=testing redskull build",
-    "build": "ENVIRONMENT=production redskull build --publicPath ./dist/ && cp -f ./dist/index.html ./index.html"
+    "build": "ENVIRONMENT=production redskull build --publicPath https://tinys.github.io/dist/ && cp -f ./dist/index.html ./index.html"
   },
   "license": "ISC",
   "dependencies": {
@@ -18,7 +18,9 @@
     "entry": "index.js",
     "dist": "./dist",
     "openBrowser": false,
-    "deps": "./",
     "favico": "./src/favicon.ico"
+  },
+  "devDependencies": {
+    "chokidar": "^1.7.0"
   }
 }

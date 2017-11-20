@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title || ''%></title>
+  <% if (htmlWebpackPlugin.files.favicon) { %>
+  <link href="<%= htmlWebpackPlugin.files.favicon%>" rel="apple-touch-icon-precomposed">
+  <link href="<%= htmlWebpackPlugin.files.favicon%>" rel="Bookmark" />
+  <link href="<%= htmlWebpackPlugin.files.favicon%>" rel="apple-touch-icon" />
+  <link href="<%= htmlWebpackPlugin.files.favicon%>" type="image/x-icon" rel=icon>
+  <link href="<%= htmlWebpackPlugin.files.favicon%>" type="image/x-icon" rel="shortcut icon">
+  <% } %>
+
+  <% if (htmlWebpackPlugin.options.mobile) { %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% } %>
+
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+  <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>
+</head>
+<body>
+  <div id="<%= htmlWebpackPlugin.options.appMountId || 'app'%>"></div>
+  <% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
+    <% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
+    <div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
+    <% } %>
+  <% } %>
+  <% if (htmlWebpackPlugin.options.window) { %>
+  <script>
+    <% for (var varName in htmlWebpackPlugin.options.window) { %>
+      window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+    <% } %>
+  </script>
+  <% } %>
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+  <% } %>
+</body>
+</html>

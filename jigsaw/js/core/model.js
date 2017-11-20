@@ -1,2 +1,0 @@
-/**combine by hugjs**/
-define("core/model",function(){return function(t){var e=t||{},n={};return e.on=function(t,e){var r=n[t];r||(r=n[t]=[]),r.push(e)},e.trigger=function(t){var r=n[t],i=Array.prototype.slice.call(arguments,1);r&&r.forEach(function(t){try{t.apply(e,i)}catch(n){}})},e.off=function(t,e){var r=n[t];if(r)for(var i=0;i<r.length;i++)if(r[i]==e)return r.splice(i,1)},e.destroy=function(){n=null},e}});

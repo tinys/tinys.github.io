@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Material Design for Bootstrap fonts and icons -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"> -->
+
+  <!-- Material Design for Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/toastify.min.css">
+  
+  <title>TRTC Web SDK Samples - 基础音视频通话</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light fixed-top rtc-primary-bg">
+    <h5>基础音视频通话</h5>
+  </nav>
+  <form id="form">
+    <div class="custom-container container">
+      <div class="row">
+        <div class="custom-row-container">
+          <div class="row">
+            <div class="col-ms">
+              <div class="card custom-card">
+                <div class="form-group">
+                  <label for="userId" class="bmd-label-floating">用户ID:</label>
+                  <input type="text" class="form-control" name="userId" id="userId">
+                </div>
+                <div class="form-group bmd-form-group">
+                  <label for="roomId" class="bmd-label-floating">房间号:</label>
+                  <input type="text" class="form-control" name="roomId" id="roomId">
+                </div>
+                <div class="form-group bmd-form-group">
+                  <button id="join" type="button" class="btn btn-raised btn-primary rtc-primary-bg">加入房间</button>
+                  <button id="leave" type="button" class="btn btn-raised btn-primary rtc-primary-bg">离开房间</button>
+                  <button id="publish" type="button" class="btn btn-raised btn-primary rtc-primary-bg">开始推流</button>
+                  <button id="unpublish" type="button" class="btn btn-raised btn-primary rtc-primary-bg">停止推流</button>
+                </div>
+              </div>
+              <div class="card">
+                <button class="btn btn-raised rtc-expand-btn" id="settings" data-toggle="collapse"
+                  data-target="#setting-collapse" aria-expanded="false" aria-controls="collapse">
+                  设置
+                </button>
+                <div id="setting-collapse" class="collapse" aria-labelledby="setting-collapse">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="cameraId" class="bmd-label-floating">摄像头</label>
+                      <select class="form-control" id="cameraId" name="cameraId">
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="microphoneId" class="bmd-label-floating">麦克风</label>
+                      <select class="form-control" id="microphoneId" name="microphoneId">
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="video-grid" id="video_grid">
+    <div id="local_stream" class="video-placeholder">
+      <div id="local_video_info" class="video-info"></div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Demo 相关第三方库-->
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/popper.js"></script>
+  <script src="./js/toastify.js"></script>
+  <script src="./js/bootstrap-material-design.min.js"></script>
+  <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+  <!-- 引入 TRTC WEB SDK 脚本 -->
+  <script src="./js/trtc.js"></script>
+  <!-- Demo 相关脚本 -->
+  <script src="./js/lib-generate-test-usersig.min.js"></script>
+  <script src="./js/debug/GenerateTestUserSig.js"></script>
+  <script src="./js/utils.js"></script>
+  <script src="./js/rtc-client.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

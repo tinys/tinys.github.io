@@ -9,6 +9,9 @@ let rtc = null;
 const userId = 'user_' + parseInt(Math.random() * 100000000)
 const roomId = '889988'
 
+$(document.body).ready(function(){
+    $('#startLoop').show()
+})
 let isStart = false
 $('#startLoop').on('click', function (e) {
     e.preventDefault();

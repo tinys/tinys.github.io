@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"> -->
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/toastify.min.css">
+    <title>直播</title>
+    <style>
+    #id_test_video{
+        width:100%;
+        height:100vh;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="id_test_video"></div>
+
+    <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js" charset="utf-8"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        var player = new TcPlayer('id_test_video', {
+            "m3u8": "http://ketest-75033.r.qlivecloud.com/live/test.m3u8", //请替换成实际可用的播放地址
+            "flv":"http://ketest-75033.r.qlivecloud.com/live/test.flv",
+            "autoplay": true,      //iOS 下 safari 浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+            "poster": "http://www.test.com/myimage.jpg",
+            "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
+            "height": '100%'//视频的显示高度，请尽量使用视频分辨率高度
+        });
+    </script>
+</body>
+
+</html>

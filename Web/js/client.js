@@ -33,7 +33,7 @@ const start = ()=>{
         userSig: config.userSig
     });
     rtc.join().then(function(){
-        rtc.publish();
+        // rtc.publish();
     })
     
 }

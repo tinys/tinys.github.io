@@ -42,7 +42,7 @@ $('#startLoop').on('click', function (e) {
     start()
 })
 $(document.body).ready(function(){
-    start()
+    // start()
 })
 
 // $('#settings').on('click', function (e) {

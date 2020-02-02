@@ -13,28 +13,46 @@
     <link rel="stylesheet" href="./css/toastify.min.css">
     <title>直播</title>
     <style>
-    #id_test_video{
-        width:100%;
-        height:100vh;
-    }
+        #id_test_video {
+            width: 100%;
+            height: 100vh;
+        }
     </style>
 </head>
 
 <body>
     <div id="id_test_video"></div>
-
+    <script src="./js/hls.js"></script>
     <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js" charset="utf-8"></script>
     <script src="./js/jquery-3.2.1.min.js"></script>
-
     <script>
         var player = new TcPlayer('id_test_video', {
             "m3u8": "http://ketest-75033.r.qlivecloud.com/live/test.m3u8", //请替换成实际可用的播放地址
-            "flv":"http://ketest-75033.r.qlivecloud.com/live/test.flv",
+            "flv": "http://ketest-75033.r.qlivecloud.com/live/test.flv",
             "autoplay": true,      //iOS 下 safari 浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
             "poster": "http://www.test.com/myimage.jpg",
-            "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
-            "height": '100%'//视频的显示高度，请尽量使用视频分辨率高度
+            "width": screen.width,//视频的显示宽度，请尽量使用视频分辨率宽度
+            "height": screen.height//视频的显示高度，请尽量使用视频分辨率高度
         });
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource('http://ketest-75033.r.qlivecloud.com/live/test.m3u8');
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        }
+        // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+        // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
+        // This is using the built-in support of the plain video element, without using hls.js.
+        // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
+        // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = 'http://ketest-75033.r.qlivecloud.com/live/test.m3u8';
+            video.addEventListener('loadedmetadata', function () {
+                video.play();
+            });
+        }
     </script>
 </body>
 
